@@ -1,0 +1,6 @@
+API:
+    get_task_status: Platforma
+    get_tenant_id: Platforma
+    get_vm_info: Platforma
+    authenticate: Platforma
+    create_entitya: Platformb
