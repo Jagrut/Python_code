@@ -1,0 +1,20 @@
+platforma:
+    host: ""
+    username: ""
+    password: ""
+    api_version: v1.3
+
+platformb:
+    platformburl: coreservices.svc.tss.mnss01.vs.management
+    platformbresourceserverclientid: 717b9c59-a373-4c3b-87c8-b55af4d5c085
+    platformbresourceserversecret: c4eizw70b00lalaj
+    platformbcorrugateclientcolonsecret: 533c0b74-eb0b-4fa9-bdf3-83d6e370abce:trjlpytdqnw0bfpg
+    platformbcorrugatesecret: trjlpytdqnw0bfpg
+    platformbcorrugateclient: 533c0b74-eb0b-4fa9-bdf3-83d6e370abce
+    platformbhypervisorid: 1a3e62ad-4f19-4dd1-b28b-e6fa72d11353
+    platformbcluster: p200001_enterprise01
+    platformbbrickhousetier: Diamond
+    platformbnetcidr: 100.80.6.0/26
+    platformbgatewayip: 100.80.6.1
+    platformbentityarid: SHWETAGARG071018E
+
