@@ -1,29 +1,8 @@
-import base64
-import json
-import logging
 import os
 import yaml
-
-
 from os.path import join
 from common.constants import CONFIG_FILE_PATH
 COMMON_BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
-
-def decode_base64_string(encoded_data):
-    """Decode the data
-    :param encoded_data: Encoded data input
-    :return: Decoded string
-    """
-    return str(base64.b64decode(encoded_data), 'utf-8')
-
-
-def decode_base64_json(encoded_data):
-    """Decode the Json data
-    :param encoded_data: Encoded data input
-    :return: Decoded json output
-    """
-    return json.loads(str(base64.b64decode(encoded_data), 'utf-8'))
 
 
 def get_config(appliance, param, yaml_file_path=join(COMMON_BASE_DIR, CONFIG_FILE_PATH)):
@@ -45,4 +24,3 @@ def get_config(appliance, param, yaml_file_path=join(COMMON_BASE_DIR, CONFIG_FIL
             .format(param)
         raise ValueError(message)
     return param_value
-
