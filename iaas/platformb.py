@@ -1,8 +1,6 @@
 from iaas.utils import Utils
-from iaas.platformb_entitya import EntityA
 from common.functions import get_config
 from common.constants import KEY_PLATFORMB
-from common.exceptions import APIException
 import logging
 
 logger = logging.getLogger(__name__)
@@ -95,5 +93,8 @@ class PlatformBManager():
 
         tenant_name = kwargs['parameters']['entitya_name']
         user_pass = kwargs['parameters']['user_pass']
-        ## User other services to create entitya
+        logger.info("group_name: {}".format(group_name))
+        logger.info("tenant_name: {}".format(tenant_name))
+        logger.info("user_pass: {}".format(user_pass))
+        # User other services to create entitya.
         pass

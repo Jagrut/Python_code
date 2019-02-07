@@ -35,7 +35,7 @@ class PlatformAManager():
         else:
             self.api_version = api_version
 
-        self.request_header = {'Accept': "application/json", 'Content-Type': "application/json"}
+        self.request_header = {}
         self.XTM_TOKEN = None
         self.tenant_id = None
 
@@ -61,8 +61,9 @@ class PlatformAManager():
 
         """
         try:
-            response = requests.post(self.url("auth"), headers=self.request_header,
-                                     json={"username": self.login, "password": self.password}, verify=False)
+            response = Utils.post_JSON(self.url("auth"), headers={},
+                                       payload={"username": self.login, "password": self.password},
+                                       doing="Authenticating on Platforma")
 
             self.XTM_TOKEN = response.json().get('Token', None)
             user_info = response.json().get('User', None)
@@ -135,4 +136,3 @@ class PlatformAManager():
             raise Exception(message)
 
         return return_data
-
