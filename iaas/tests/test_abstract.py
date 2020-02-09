@@ -1,5 +1,4 @@
 # Create your tests here.
-#from django.test import SimpleTestCase
 import unittest
 from mock import patch
 

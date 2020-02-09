@@ -1,5 +1,4 @@
 import logging
-from iaas.utils import Utils
 
 logger = logging.getLogger(__name__)
 
@@ -54,14 +53,8 @@ class EntityA(object):
         payload = {
             "name": entitya_name,
             "entitya_domain": entitya_domain}
+        print(payload)
         # Some rest calls.
-        #url = '{}/entitya'.format(self.platformb_obj.deadbolt_url)
-        #resp = Utils.post_JSON(url, headers, payload, 'creating entitya {}'.format(self.entitya_name))
-
-        #self.entitya_id = resp.json()['id']
-        #self.entitya_id.replace('"', '')
-
-        #logger.debug('received entitya_id: {}'.format(self.entitya_id))
 
         return self.entitya_id
 
@@ -83,19 +76,8 @@ class EntityA(object):
         payload = {
             "client_id": self.platformb_obj.resource_server_clientid,
             "group_name": self.group_name}
+        print(payload)
         # Some rest call.
-        #url = '{}/group'.format(self.platformb_obj.deadbolt_url)
-        #task = 'creating group {} for {}'.format(self.group_name,
-        #                                         self.entitya_name)
-        #resp = Utils.post_JSON(url, headers, payload, task)
-
-        ## Need to support multiple groups
-        #self.group_id = resp.json()['id']
-        #self.group_id.replace('"', '')
-
-        #logger.debug('received group_id: {}'.format(self.group_id))
-
-        #return self.group_id
 
     def create_user(self, password, group_id, first_name=None, last_name=None, email=None):
         """
@@ -119,16 +101,8 @@ class EntityA(object):
             "sam_account_name": "Basic",
             "temp_password": password,
             "user_groups": [group_id]}
+        print(payload)
         # Some rest call.
-        #url = '{}/user'.format(self.platformb_obj.deadbolt_url)
-        #resp = Utils.post_JSON(url, headers, payload, 'creating user {}'.format(email))
-
-        #logger.debug('create_user received "{}"'.format(resp.text))
-
-        #self.rpu_username = '{}/{}'.format(self.entitya_name, email)
-        #self.rpu_password = password
-
-        #return resp.text
 
     def import_rpc(self, rpc):
         """

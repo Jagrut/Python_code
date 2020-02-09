@@ -1,29 +1,25 @@
-#from django.test import SimpleTestCase
 import unittest
 from mock import MagicMock
 from mock import patch
 
 from iaas.platformb_entitya import EntityA
 from iaas.platformb import PlatformBManager
-#from iaas.deadbolt import RequestingPartyClient
 
 def mock_get_config(key, attribute):
     data_dict = {"platformb": {"platformburl": "dummy.url",
-                            "platformbresourceserverclientid": "b55af4d5c085",
-                            "platformbresourceserversecret": "c0lj",
-                            "platformbcorrugateclientcolonsecret": "e:trnw0bfpg",
-                            "platformbcorrugatesecret": "trjlpyg",
-                            "platformbcorrugateclient": "83d6e370abce",
-                            "platformbhypervisorid": "-e6fa72d11353",
-                            "platformbcluster": "p21se01",
-                            "platformbbrickhousetier": "amd",
-                            "platformbnetcidr": "cidr/26",
-                            "platformbgatewayip": "gateway",
-                            "platformbtenantrid": "test"
-                            },
+                               "platformbresourceserverclientid": "b55af4d5c085",
+                               "platformbresourceserversecret": "c0lj",
+                               "platformbcorrugateclientcolonsecret": "e:trnw0bfpg",
+                               "platformbcorrugatesecret": "trjlpyg",
+                               "platformbcorrugateclient": "83d6e370abce",
+                               "platformbhypervisorid": "-e6fa72d11353",
+                               "platformbcluster": "p21se01",
+                               "platformbbrickhousetier": "amd",
+                               "platformbnetcidr": "cidr/26",
+                               "platformbgatewayip": "gateway",
+                               "platformbtenantrid": "test"},
                  "deadbolt": {"username": "test",
-                              "password": "test"
-                              }
+                              "password": "test"}
                  }
 
     return data_dict[key][attribute]

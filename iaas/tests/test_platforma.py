@@ -1,22 +1,17 @@
-#from django.test import SimpleTestCase
 import unittest
 from mock import MagicMock
 from mock import patch
-import json
-
 from iaas.platforma import PlatformAManager
 
 def mock_get_config(key, attribute):
     data_dict = {"github": {"url": "https://example.com",
                             "username": "test",
                             "password": "password",
-                            "api_version": "v3"
-                            },
+                            "api_version": "v3"},
                  "platforma": {"host": "https://platforma.example.com",
-                             "username": "test",
-                             "password": "Password1",
-                             "api_version": "v1.3"
-                             }
+                               "username": "test",
+                               "password": "Password1",
+                               "api_version": "v1.3"}
                  }
 
     return data_dict[key][attribute]
@@ -67,7 +62,6 @@ class TestPlatformA(unittest.TestCase):
         tenan_id = self.platforma.get_tenant_id(parameters={})
         self.assertIs(tenan_id, None)
 
-
     @patch('iaas.platforma.get_config')
     @patch('iaas.platforma.PlatformAManager.authenticate')
     @patch('iaas.platforma.Utils')
@@ -113,5 +107,6 @@ class TestPlatformA(unittest.TestCase):
 
         self.platforma = PlatformAManager()
         with patch('iaas.platforma.sleep'):
-            msg_info = self.platforma.get_task_status(parameters={"message_id": "123s-3fs32-svseves-43sefsef"})
+            parameter_dict = {"message_id": "123s-3fs32-svseves-43sefsef"}
+            msg_info = self.platforma.get_task_status(parameters=parameter_dict)
             self.assertEqual(msg_info, match_data)
